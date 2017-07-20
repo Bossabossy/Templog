@@ -8,13 +8,13 @@ from django.db import models
 # 	time=models.DateTimeField(auto_now_add=True,)
 
 class Node(models.Model):
-	node_name=models.CharField(max_length=10)
+	node_name=models.CharField(max_length=10, unique=True)
 	description=models.CharField(max_length=100)
 	def __str__(self):
 		return "{}:{}:{}".format(self.id, self.node_name, self.description)
 
 class Attribute(models.Model):
-	attribute=models.CharField(max_length=5)
+	attribute=models.CharField(max_length=5, unique=True)
 	description=models.CharField(max_length=100)
 	def __str__(self):
 		return "{}".format(self.description)
@@ -25,6 +25,8 @@ class Record(models.Model):
 	node=models.ForeignKey(Node, on_delete=models.CASCADE)
 	value=models.FloatField(default=0.0)
 	attr=models.ForeignKey(Attribute, on_delete=models.CASCADE)
+	def __str__(self):
+		return "{}".format(self.id)
 
 
 
