@@ -1,5 +1,5 @@
 # Setup django extension
-(http://django-extensions.readthedocs.io)[http://django-extensions.readthedocs.io]
+[document](http://django-extensions.readthedocs.io)
 
 * pip install django-extensions
 * setting.py add " 'django_extensions', "
