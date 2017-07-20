@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from myapp.models import Room
+#from myapp.models import Room
 #http://localhost:8000/access_room/?temp=25.0&humi=80.0
 def access_room(request):
 	if request.method == 'GET':
